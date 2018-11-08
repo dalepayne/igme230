@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css">
     <title>Dale Payne</title>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/jquery.windows.js"></script>
 </head>
 <body>
@@ -55,16 +55,20 @@
 
             $(document).ready(function(){
 
-                var $windows = $('.window');
-
-                $windows.windows({
+                $('.window').windows({
                     snapping: true,
                     snapSpeed: 500,
                     snapInterval: 1100,
-                    onScroll: function(s){},
-                    onSnapComplete: function($el){},
-                    onWindowEnter: function($el){}
-                });
+                    onScroll: function(scrollPos){
+                        // scrollPos:Number
+                    },
+                    onSnapComplete: function($el){
+                        // after window ($el) snaps into place
+                    },
+                    onWindowEnter: function($el){
+                        // when new window ($el) enters viewport
+                    }
+                })
 
             });
         </script>
