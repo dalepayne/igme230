@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    font-size: 16px;
+}
+
+body {
+    background-image: url("../media/background2.jpg");
+}
+
+#wrapper {
+    display: grid;
+    width: 100vw;
+    grid-template-areas: "nav" "header" "article" "footer";
+    grid-template-rows: 1fr 4fr 8fr 2fr;
+}
+
+nav,
+footer {
+    display: flex;
+
+}
+
+nav,
+header,
+footer {
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.sidenav {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: lightgray;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Oxygen', sans-serif;
+    color: rgba(20, 20, 20, 0.678);
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav button {
+    padding: 8px 8px 8px 32px;
+    color: rgba(216, 68, 0, 0.698);
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+nav {
+    grid-area: nav;
+    
+}
+
+header {
+    grid-area: header;
+}
+
+article {
+    grid-area: article;
+}
+
+/* aside {
+    grid-area: aside;
+} */
+
+footer {
+    grid-area: footer;
+}
+
+.greeting { 
+    font-family: 'Oxygen', sans-serif;
+    color: white;
+}
+
+.greeting>p {
+    font-weight: 200;
+}
+
+
+@media only screen and (min-width: 980px) {
+    #wrapper {
+    grid-template-areas: "nav nav nav"  /* 1st row: nav spans three columns  */
+    "header header header"  /* 2nd row: header spans three columns  */
+    "article article article"  /* 3rd row: article spans three columns  */
+    "footer footer footer"; /* 4th row: footer spans three columns */
+    grid-template-rows: 1fr 10fr 1fr;   /* defines relative height of three rows */
+    grid-template-columns: auto auto auto;   /* defines width of the three columns */
+    }
+
+}
