@@ -45,30 +45,55 @@ Your Formatting
 
 header {
     grid-area: header;
+    background-color: lightblue;
 }
 
 nav {
     grid-area: nav;
+    background-color: lavenderblush;
 }
 
 section#story {
     grid-area: story;
+    background-color: lightcyan;
 }
 
 section#source {
     grid-area: source;
+    background-color: lightsalmon;
 }
 
 section#extracredit {
     grid-area: extracredit;
+    margin: auto;
+    
+}
+
+button {
+    display: block;
+    margin: 0 auto;
 }
 
 footer {
     grid-area: footer;
+    background-color: lightblue;
+}
+
+header, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li:hover {
+    background-color: lightpink;
+    color: magenta;
+    cursor: pointer;
 }
 
 #pagegrid {
     display: grid;
+    margin: auto;
     width: 100vw;
     grid-template-areas: "header" "story" "source" "extracredit" "nav" "footer";
     grid-template-rows: 80px auto auto auto auto 30px;
